@@ -23,14 +23,18 @@ function clean() {
     rm -rf out
 }
 
-export KBUILD_BUILD_HOST=Nian
-export KBUILD_BUILD_USER="AkuFarish"
+export KBUILD_BUILD_HOST=Play
+export KBUILD_BUILD_USER="Pragmatic"
 
 function build_kernel() {
-    export PATH="/home/akufarish/clang/bin:$PATH"
+    export PATH="/workspace/kernel_realme_sdm710/zyc-18/bin:$PATH"
     make -j$(nproc --all) O=out ARCH=arm64 nian_defconfig
     make -j$(nproc --all) ARCH=arm64 O=out \
+                          LD=ld.lld \
+                          NM=llvm-nm \
+                          AR=llvm-ar \
                           CC=clang \
+                          CLANG_TRIPLE=aarch64-linux-gnu- \
                           CROSS_COMPILE=aarch64-linux-gnu- \
                           CROSS_COMPILE_ARM32=arm-linux-gnueabi-
     if [ -e "$KERN_IMG" ] || [ -e "$KERN_IMG2" ]; then
