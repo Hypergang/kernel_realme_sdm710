@@ -2,6 +2,7 @@ ccflags-y := -Iinclude/linux
 
 msm_kgsl_core-y = \
 	kgsl.o \
+	kgsl_trace.o \
 	kgsl_drawobj.o \
 	kgsl_ioctl.o \
 	kgsl_sharedmem.o \
@@ -26,6 +27,7 @@ msm_adreno-y += \
 	adreno_dispatch.o \
 	adreno_snapshot.o \
 	adreno_coresight.o \
+	adreno_trace.o \
 	adreno_a3xx.o \
 	adreno_a4xx.o \
 	adreno_a5xx.o \
@@ -51,5 +53,3 @@ msm_adreno-objs = $(msm_adreno-y)
 
 obj-$(CONFIG_QCOM_KGSL) += msm_kgsl_core.o
 obj-$(CONFIG_QCOM_KGSL) += msm_adreno.o
-
-ccflags-y += -Wno-unused-variable
