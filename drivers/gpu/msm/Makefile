@@ -23,7 +23,6 @@ msm_adreno-y += \
 	adreno_ringbuffer.o \
 	adreno_drawctxt.o \
 	adreno_dispatch.o \
-	adreno_coresight.o \
 	adreno_a6xx.o \
 	adreno_a6xx_preempt.o \
 	adreno_sysfs.o \
