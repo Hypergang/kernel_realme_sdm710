@@ -142,9 +142,9 @@ const_debug unsigned int sysctl_sched_features =
  * Limited because this is done with IRQs disabled.
  */
 #ifndef CONFIG_PREEMPT_RT_FULL
-const_debug unsigned int sysctl_sched_nr_migrate = 128;
+const_debug unsigned int sysctl_sched_nr_migrate = NR_CPUS;
 #else
-const_debug unsigned int sysctl_sched_nr_migrate = 8;
+const_debug unsigned int sysctl_sched_nr_migrate = NR_CPUS;
 #endif
 
 /*
