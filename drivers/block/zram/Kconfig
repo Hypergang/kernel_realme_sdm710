@@ -31,7 +31,7 @@ config ZRAM_DEDUP
 config ZRAM_WRITEBACK
        bool "Write back incompressible or idle page to backing device"
        depends on ZRAM
-       default n
+       default y
        help
 	 With incompressible page, there is no memory saving to keep it
 	 in memory. Instead, write it out to backing device.
@@ -55,5 +55,5 @@ config ZRAM_MEMORY_TRACKING
 
 config ZRAM_DEFAULT_COMP_ALGORITHM
 	string "Default ZRAM algorithm"
-	default "zstd"
+	default "lz4"
 
