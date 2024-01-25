@@ -166,7 +166,7 @@ do {                                                    \
 #define FW_READ_ATTEMPTS 15
 #define FW_READ_TIMEOUT 4000000
 #define FAKE_REM_RETRY_ATTEMPTS 3
-#define MAX_IMPED 60000
+#define MAX_IMPED 100000
 #ifdef VENDOR_EDIT
 /* Huiqun.Han@PSW.MM.AudioDriver.Machine, 2018/06/29, Add for usb type-c audio */
 #ifdef USB_SWITCH_MAX20328
