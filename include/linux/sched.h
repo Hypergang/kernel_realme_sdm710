@@ -2242,6 +2242,9 @@ static inline struct vm_struct *task_stack_vm_area(const struct task_struct *t)
 	return NULL;
 }
 #endif
+#ifdef CONFIG_ANDROID_SIMPLE_LMK
+	struct task_struct		*simple_lmk_next;
+#endif
 
 /* Future-safe accessor for struct task_struct's cpus_allowed. */
 #define tsk_cpus_allowed(tsk) (&(tsk)->cpus_allowed)
