@@ -30,9 +30,7 @@ function build_kernel() {
     export PATH="/workspace/kernel_realme_sdm710/weebx/bin:$PATH"
     make -j$(nproc --all) O=out ARCH=arm64 nian_defconfig
     make -j$(nproc --all) ARCH=arm64 O=out \
-                          LD=ld.lld \
-                          NM=llvm-nm \
-                          AR=llvm-ar \
+                          LLVM=1 \
                           CC=clang \
                           CLANG_TRIPLE=aarch64-linux-gnu- \
                           CROSS_COMPILE=aarch64-linux-gnu- \
